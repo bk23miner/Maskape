@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 
 
 func stop_game():
+	collected_pieces = 0
 	var scene = load("res://scenes/menu.tscn")
 	var instance = scene.instantiate()
 	add_child(instance)

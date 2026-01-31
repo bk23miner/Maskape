@@ -1,24 +1,25 @@
 [gd_scene format=3 uid="uid://c0u1jsmpwviuf"]
 
 [ext_resource type="Script" uid="uid://dsbfqatu46luo" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="Texture2D" uid="uid://128x1psnh7fx" path="res://icon.svg" id="2_5ysmq"]
 [ext_resource type="PackedScene" uid="uid://bo2ecdnv468go" path="res://scenes/dialog.tscn" id="2_oo0fn"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_toqtt"]
-font_size = 64
 
 [node name="Hud" type="Node2D" unique_id=1519614959]
 script = ExtResource("1_ahhtf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=851511556]
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=371910262]
-anchors_preset = 1
-anchor_left = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1775163909]
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
-grow_horizontal = 0
-text = "x/n"
-label_settings = SubResource("LabelSettings_toqtt")
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="TextureRect" parent="CanvasLayer/VBoxContainer" unique_id=1268192872]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("2_5ysmq")
 
 [node name="Dialog" parent="." unique_id=1243465156 instance=ExtResource("2_oo0fn")]

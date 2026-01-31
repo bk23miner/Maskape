@@ -55,9 +55,10 @@ one_shot = true
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1085660339]
+z_index = 2
 material = SubResource("ShaderMaterial_my7n2")
 position = Vector2(-1, 0)
-zoom = Vector2(5, 5)
+zoom = Vector2(6.5, 6.5)
 position_smoothing_enabled = true
 
 [node name="target" type="Node2D" parent="." unique_id=1381367847]
