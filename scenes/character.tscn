@@ -31,5 +31,8 @@ one_shot = true
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
+[node name="target" type="Node2D" parent="." unique_id=1381367847]
+position = Vector2(12, -11)
+
 [connection signal="timeout" from="dash_timer" to="." method="finish_dash"]
 [connection signal="timeout" from="cooldown" to="." method="finish_cooldown"]
