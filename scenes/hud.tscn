@@ -1,3 +1,21 @@
 [gd_scene format=3 uid="uid://c0u1jsmpwviuf"]
 
+[ext_resource type="Script" uid="uid://dsbfqatu46luo" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_toqtt"]
+font_size = 64
+
 [node name="Hud" type="Node2D" unique_id=1519614959]
+script = ExtResource("1_ahhtf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=851511556]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=371910262]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "x/n"
+label_settings = SubResource("LabelSettings_toqtt")
