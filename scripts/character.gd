@@ -7,6 +7,8 @@ class_name Player extends CharacterBody2D
 
 var dashing = false
 var cooldown = true
+var last_direction := "front"
+
 @onready var body: AnimatedSprite2D = $Body
 
 func _physics_process(delta):
@@ -21,32 +23,40 @@ func _physics_process(delta):
 	else:
 		velocity = input_direction * SPEED
 	move_and_slide()
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		#print(collision.get_collider())
-	for note in get_tree().get_nodes_in_group("player"):
-		#print(note.get_path)
-		pass
-	
-	
+
 	if velocity.length_squared()>0:
 		var direction = velocity.angle_to(Vector2(1, 0))
-
 		#rechts	
 		if direction <= PI/4.0 and direction >=-PI/4.0:
+			last_direction = "right"
 			body.play("right")
 		#oben
 		if direction >= PI/4.0 and direction <=PI*0.75:
+			last_direction = "back"
 			body.play("back")
 		#links
 		if direction >=PI*0.75 or direction <=-PI*0.75:
+			last_direction = "left"
 			body.play("left")
 		#unten
 		if direction <=-PI/4.0 and direction >=-PI*0.75:
+			last_direction = "front"
 			body.play("front")
 			#print("test")
 	else:
-		body.stop()
+		play_idle()
+
+func play_idle():
+	match last_direction:
+		"right":
+			body.play("idle_r")
+		"left":
+			body.play("idle_l")
+		"back":
+			body.play("idle_f")
+		"front":
+			body.play("idle_f")
+
 
 func finish_dash():
 	dashing = false
