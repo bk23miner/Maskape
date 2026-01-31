@@ -23,5 +23,8 @@ one_shot = true
 [node name="cooldown" type="Timer" parent="." unique_id=232941004]
 one_shot = true
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=525642144]
+zoom = Vector2(2.66, 2.66)
+
 [connection signal="timeout" from="dash_timer" to="." method="finish_dash"]
 [connection signal="timeout" from="cooldown" to="." method="finish_cooldown"]
