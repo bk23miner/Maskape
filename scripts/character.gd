@@ -4,29 +4,49 @@ class_name Player extends CharacterBody2D
 
 @export var SPEED := 200.0
 @export var DASH := 300.0
+
 var dashing = false
 var cooldown = true
+@onready var body: AnimatedSprite2D = $Body
 
 func _physics_process(delta):
-		var input_direction = Input.get_vector("left", "right", "up", "down")
-		if Input.is_action_just_pressed("dash") and cooldown:
-			dashing = true
-			cooldown = false
-			$dash_timer.start()
-			$cooldown.start()
-		if dashing:
-			velocity = input_direction * (SPEED + DASH)
-		else:
-			velocity = input_direction * SPEED
-		move_and_slide()
-		for i in get_slide_collision_count():
-			var collision = get_slide_collision(i)
-			#print(collision.get_collider())
-		for note in get_tree().get_nodes_in_group("player"):
-			#print(note.get_path)
-			pass
+	var input_direction = Input.get_vector("left", "right", "up", "down")
+	if Input.is_action_just_pressed("dash") and cooldown:
+		dashing = true
+		cooldown = false
+		$dash_timer.start()
+		$cooldown.start()
+	if dashing:
+		velocity = input_direction * (SPEED + DASH)
+	else:
+		velocity = input_direction * SPEED
+	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		#print(collision.get_collider())
+	for note in get_tree().get_nodes_in_group("player"):
+		#print(note.get_path)
+		pass
+	
+	
+	if velocity.length_squared()>0:
+		var direction = velocity.angle_to(Vector2(1, 0))
 
-
+		#rechts	
+		if direction <= PI/4.0 and direction >=-PI/4.0:
+			body.play("right")
+		#oben
+		if direction >= PI/4.0 and direction <=PI*0.75:
+			body.play("back")
+		#links
+		if direction >=PI*0.75 or direction <=-PI*0.75:
+			body.play("left")
+		#unten
+		if direction <=-PI/4.0 and direction >=-PI*0.75:
+			body.play("front")
+			#print("test")
+	else:
+		body.stop()
 
 func finish_dash():
 	dashing = false
