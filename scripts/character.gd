@@ -8,10 +8,13 @@ class_name Player extends CharacterBody2D
 var dashing = false
 var cooldown = true
 var last_direction := "front"
+var is_picking_up = false
 
 @onready var body: AnimatedSprite2D = $Body
 
 func _physics_process(delta):
+	if is_picking_up:
+		return
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	if Input.is_action_just_pressed("dash") and cooldown:
 		dashing = true
@@ -20,11 +23,13 @@ func _physics_process(delta):
 		$cooldown.start()
 	if dashing:
 		velocity = input_direction * (SPEED + DASH)
+		body.frame = 1
 	else:
 		velocity = input_direction * SPEED
 	move_and_slide()
 
 	if velocity.length_squared()>0:
+		
 		$AudioStreamPlayer2D.play()
 		var direction = velocity.angle_to(Vector2(1, 0))
 		#rechts	
@@ -64,6 +69,15 @@ func finish_dash():
 	dashing = false
 	print("Test")
 
+
+func pickup():
+	is_picking_up = true
+	if last_direction == "left":
+		body.play("pickup_left")
+	else:
+		body.play("pickup_right")
+	await body.animation_finished
+	is_picking_up = false
 
 func finish_cooldown():
 	cooldown = true

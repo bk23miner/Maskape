@@ -3,6 +3,7 @@ extends Area2D
 var collected_by_player = false
 var collected_by_gate = false
 
+
 var player
 var gate
 
@@ -16,6 +17,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if player.is_picking_up:
+		return
 	if collected_by_gate:
 		position = position.lerp(gate.position, delta)
 		if (position-gate.position).length() < 10:
@@ -33,3 +36,6 @@ func _on_body_entered(body: Node2D) -> void:
 		if count < 1:
 			collected_by_player = true
 			$AudioStreamPlayer2D.play()
+			player.pickup()
+
+			
