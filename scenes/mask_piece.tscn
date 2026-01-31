@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnyms2okoibcu"]
 
 [ext_resource type="Script" uid="uid://cklwxkvhid82e" path="res://scripts/mask_piece.gd" id="1_6o1re"]
-[ext_resource type="Texture2D" uid="uid://128x1psnh7fx" path="res://icon.svg" id="1_dlqsh"]
+[ext_resource type="Texture2D" uid="uid://65hljlqvvl13" path="res://assets/stuff/maskpiece.png" id="2_6o1re"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6o1re"]
 radius = 22.203604
@@ -11,7 +11,7 @@ script = ExtResource("1_6o1re")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=402349382]
 scale = Vector2(0.203125, 0.203125)
-texture = ExtResource("1_dlqsh")
+texture = ExtResource("2_6o1re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=579830794]
 shape = SubResource("CircleShape2D_6o1re")
