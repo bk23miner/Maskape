@@ -28,6 +28,7 @@ one_shot = true
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1085660339]
+position = Vector2(-1, 0)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 

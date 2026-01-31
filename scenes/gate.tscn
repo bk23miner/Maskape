@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://841i2ml85gs6"]
+
+[ext_resource type="Script" path="res://scripts/gate_object.gd" id="1_xwxio"]
+[ext_resource type="Texture2D" uid="uid://ccqnu0v7j3uog" path="res://assets/test_textures/Spritesheet.png" id="2_hudsw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wi8tm"]
+size = Vector2(125, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbnmf"]
+atlas = ExtResource("2_hudsw")
+region = Rect2(63.655197, 21.353905, 127.72359, 53.343384)
+
+[node name="Gate" type="Node2D" unique_id=613757034]
+
+[node name="gate_object" type="Area2D" parent="." unique_id=1901199865 groups=["gate"]]
+script = ExtResource("1_xwxio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gate_object" unique_id=663245705]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_wi8tm")
+
+[node name="gate_texture" type="Sprite2D" parent="gate_object" unique_id=577457913]
+texture = SubResource("AtlasTexture_nbnmf")
+
+[connection signal="body_entered" from="gate_object" to="gate_object" method="collision_with_player"]
