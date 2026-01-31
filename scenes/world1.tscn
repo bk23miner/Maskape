@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://d2prbs7gyydhv" path="res://scenes/character.tscn" id="1_6kdnw"]
 [ext_resource type="Texture2D" uid="uid://cwdey7kykxkxb" path="res://assets/test_textures/BasicGreen.png" id="1_rp871"]
-[ext_resource type="Script" uid="uid://b0n6x2cgo85su" path="res://scripts/world_1.gd" id="1_scryw"]
+[ext_resource type="Script" path="res://scripts/world_1.gd" id="1_scryw"]
+[ext_resource type="PackedScene" uid="uid://cnyms2okoibcu" path="res://scenes/mask_piece.tscn" id="3_scryw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scryw"]
 texture = ExtResource("1_rp871")
@@ -61,3 +62,6 @@ tile_set = SubResource("TileSet_6u51x")
 position = Vector2(202, -152)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=125559389]
+
+[node name="MaskPiece" parent="." unique_id=1027595768 instance=ExtResource("3_scryw")]
+position = Vector2(87, -101)

@@ -1,5 +1,6 @@
 extends Node2D
 
+var collected_pieces = 0
 var game_running = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,22 +12,21 @@ func _process(delta: float) -> void:
 	pass
 
 
-
-
 func stop_game():
 	var scene = load("res://scenes/menu.tscn")
 	var instance = scene.instantiate()
 	add_child(instance)
 
 func start_game():
+	collected_pieces = 0
 	var scene = load("res://scenes/world1.tscn")
 	var instance = scene.instantiate()
 	add_child(instance)
 	game_running = true
 	
 	
-
-	
+func add_piece():
+	collected_pieces += 1
 
 
 
