@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vue5emucemhb"]
 
-[ext_resource type="Script" path="res://scripts/menu.gd" id="1_mhnvy"]
+[ext_resource type="Script" uid="uid://k8hyyj6yyd7b" path="res://scripts/menu.gd" id="1_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://sst2jgn3hq1o" path="res://assets/Menu/background.png" id="2_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://bd0pt40nfj5lq" path="res://assets/Menu/start-2.png" id="3_4ytvr"]
 [ext_resource type="Texture2D" uid="uid://bg2bwmlg7o270" path="res://assets/Menu/start-1.png" id="3_mhnvy"]

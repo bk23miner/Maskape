@@ -4,3 +4,9 @@
 
 [node name="Main" type="Node2D" unique_id=1007583873]
 script = ExtResource("1_tbgi4")
+
+[node name="Timer" type="Timer" parent="." unique_id=1292708907]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="go_to_menu"]
