@@ -2,6 +2,8 @@ extends Node2D
 
 var collected_pieces = 0
 var game_running = false
+var dialog_node: Node = null
+var node_need: Node = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -18,11 +20,18 @@ func stop_game():
 	add_child(instance)
 
 func start_game():
-	collected_pieces = 0
+	#var scene = load("res://scenes/dialog.tscn")
+	#var instance = scene.instantiate()
+	#add_child(instance)
+	#dialog_node = instance
+	#await dialog_node.start_dialog()
 	var scene = load("res://scenes/world1.tscn")
 	var instance = scene.instantiate()
 	add_child(instance)
 	game_running = true
+	#node_need = instance
+	#node_need.run_dialog
+	
 	
 	
 func add_piece():

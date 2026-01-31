@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c0u1jsmpwviuf"]
 
 [ext_resource type="Script" uid="uid://dsbfqatu46luo" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="PackedScene" uid="uid://bo2ecdnv468go" path="res://scenes/dialog.tscn" id="2_oo0fn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_toqtt"]
 font_size = 64
@@ -19,3 +20,5 @@ offset_bottom = 23.0
 grow_horizontal = 0
 text = "x/n"
 label_settings = SubResource("LabelSettings_toqtt")
+
+[node name="Dialog" parent="." unique_id=1243465156 instance=ExtResource("2_oo0fn")]

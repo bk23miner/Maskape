@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bo2ecdnv468go"]
+
+[ext_resource type="Script" uid="uid://djn226vt20688" path="res://scripts/dialog.gd" id="1_tmfn4"]
+[ext_resource type="Texture2D" uid="uid://cwr3qc1snukme" path="res://assets/stuff/text-box.png" id="2_auqi6"]
+[ext_resource type="FontFile" uid="uid://cxp2okrov2s0i" path="res://assets/font/PixelatedEleganceRegular-ovyAA.ttf" id="3_4wims"]
+
+[sub_resource type="Gradient" id="Gradient_o7i0r"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tmfn4"]
+gradient = SubResource("Gradient_o7i0r")
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1kyf"]
+line_spacing = 16.0
+font = ExtResource("3_4wims")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+shadow_size = 16
+shadow_color = Color(0.81, 0.6858, 0.48600003, 1)
+
+[node name="Dialog" type="CanvasLayer" unique_id=1243465156]
+script = ExtResource("1_tmfn4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1430894786]
+visible = false
+anchors_preset = -1
+anchor_top = 0.70000005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=61469813]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_tmfn4")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=916606285]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.8
+anchor_right = 0.9
+anchor_bottom = 1.0
+offset_left = 0.59999084
+offset_top = -25.880005
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer2" unique_id=1460005817]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_auqi6")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=118279796]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.8
+anchor_right = 0.9
+anchor_bottom = 1.0
+offset_left = 0.59999084
+offset_top = -25.880005
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer3" unique_id=727590043]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Hallo "
+label_settings = SubResource("LabelSettings_b1kyf")
+horizontal_alignment = 1
+vertical_alignment = 1
