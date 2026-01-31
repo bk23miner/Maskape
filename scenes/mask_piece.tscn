@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cklwxkvhid82e" path="res://scripts/mask_piece.gd" id="1_6o1re"]
 [ext_resource type="Texture2D" uid="uid://65hljlqvvl13" path="res://assets/stuff/maskpiece.png" id="2_6o1re"]
+[ext_resource type="AudioStream" uid="uid://da0oamk00mysa" path="res://assets/sounds/collect.wav" id="3_f8ijw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6o1re"]
 radius = 22.203604
@@ -16,5 +17,9 @@ texture = ExtResource("2_6o1re")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=579830794]
 shape = SubResource("CircleShape2D_6o1re")
 debug_color = Color(0.7492903, 0.46064168, 5.7756904e-07, 0.41960785)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=35688991]
+stream = ExtResource("3_f8ijw")
+bus = &"Effects"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

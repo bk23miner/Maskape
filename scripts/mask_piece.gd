@@ -32,3 +32,4 @@ func _on_body_entered(body: Node2D) -> void:
 				count += 1
 		if count < 1:
 			collected_by_player = true
+			$AudioStreamPlayer2D.play()

@@ -24,10 +24,10 @@ position = Vector2(191, -87)
 
 [node name="Hud" parent="." unique_id=1519614959 instance=ExtResource("4_6u51x")]
 
-[node name="MaskPiece2" parent="." unique_id=1950714941 instance=ExtResource("3_scryw")]
+[node name="MaskPiece2" parent="." unique_id=1950714941 groups=["mask_piece"] instance=ExtResource("3_scryw")]
 position = Vector2(271, -81)
 
-[node name="MaskPiece3" parent="." unique_id=1986901176 instance=ExtResource("3_scryw")]
+[node name="MaskPiece3" parent="." unique_id=1986901176 groups=["mask_piece"] instance=ExtResource("3_scryw")]
 position = Vector2(391, -83)
 
 [node name="MapTemplate" type="Sprite2D" parent="." unique_id=576823213]

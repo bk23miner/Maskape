@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://o8ra0xf7gjee" path="res://scripts/character.gd" id="1_rkhd4"]
 [ext_resource type="SpriteFrames" uid="uid://cw45sfxvso2nn" path="res://assets/character/walking.tres" id="2_rkhd4"]
 [ext_resource type="Shader" uid="uid://bpet5xui58o8m" path="res://assets/shader/vignette.gdshader" id="3_lrhn5"]
+[ext_resource type="AudioStream" uid="uid://dnij8prgbp2ab" path="res://assets/sounds/walk1.wav" id="4_dp8ca"]
+[ext_resource type="AudioStream" uid="uid://bbvmgujek6q0l" path="res://assets/sounds/walk2.wav" id="5_0lw5n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkhd4"]
 radius = 5.0
@@ -30,6 +32,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 "
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_2cgup"]
+fade_time = 0.0
+stream_count = 2
+stream_0 = ExtResource("4_dp8ca")
+stream_1 = ExtResource("5_0lw5n")
 
 [node name="Character" type="CharacterBody2D" unique_id=1676013416 groups=["player"]]
 script = ExtResource("1_rkhd4")
@@ -71,6 +79,9 @@ script = SubResource("GDScript_dp8ca")
 
 [node name="target" type="Node2D" parent="." unique_id=1381367847]
 position = Vector2(12, -11)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=338548201]
+stream = SubResource("AudioStreamPlaylist_2cgup")
 
 [connection signal="timeout" from="dash_timer" to="." method="finish_dash"]
 [connection signal="timeout" from="cooldown" to="." method="finish_cooldown"]

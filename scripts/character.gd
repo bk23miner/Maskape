@@ -25,6 +25,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 	if velocity.length_squared()>0:
+		$AudioStreamPlayer2D.play()
 		var direction = velocity.angle_to(Vector2(1, 0))
 		#rechts	
 		if direction <= PI/4.0 and direction >=-PI/4.0:
@@ -45,6 +46,7 @@ func _physics_process(delta):
 			#print("test")
 	else:
 		play_idle()
+		$AudioStreamPlayer2D.stop()
 
 func play_idle():
 	match last_direction:
