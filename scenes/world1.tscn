@@ -13,13 +13,11 @@
 script = ExtResource("1_scryw")
 
 [node name="Maskpiece" type="Sprite2D" parent="." unique_id=2025078660]
-visible = false
 position = Vector2(251.99997, -25)
 scale = Vector2(100, 100)
 texture = ExtResource("2_o24d1")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=690026965]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2124291519]
