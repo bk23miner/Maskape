@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkhd4"]
 
-[node name="Character" type="CharacterBody2D" unique_id=1676013416]
+[node name="Character" type="CharacterBody2D" unique_id=1676013416 groups=["player"]]
 script = ExtResource("1_rkhd4")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=341539489]
@@ -21,6 +21,7 @@ wait_time = 0.25
 one_shot = true
 
 [node name="cooldown" type="Timer" parent="." unique_id=232941004]
+one_shot = true
 
 [connection signal="timeout" from="dash_timer" to="." method="finish_dash"]
 [connection signal="timeout" from="cooldown" to="." method="finish_cooldown"]

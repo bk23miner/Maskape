@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://vue5emucemhb"]
+
+[ext_resource type="Texture2D" uid="uid://d3junmp4vvqs" path="res://assets/test_textures/ece60cc31aeebda.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://128x1psnh7fx" path="res://icon.svg" id="2_vjb58"]
+[ext_resource type="Script" uid="uid://bgfbnkf6n5wa5" path="res://scripts/start_button.gd" id="3_con2f"]
+
+[node name="Menu" type="Node2D" unique_id=2054209861]
+
+[node name="background" type="Sprite2D" parent="." unique_id=98896818]
+texture = ExtResource("1_yqeox")
+
+[node name="start_button" type="Button" parent="." unique_id=923625081]
+offset_left = -264.0
+offset_top = -140.0
+offset_right = 111.0
+offset_bottom = -4.0
+text = "Start"
+icon = ExtResource("2_vjb58")
+script = ExtResource("3_con2f")

@@ -11,9 +11,22 @@ config_version=5
 [application]
 
 config/name="Maskape"
-run/main_scene="uid://bri2ogbypkbhj"
+run/main_scene="uid://dt0rtk13elsee"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Game="*uid://dn1wq8k4nwkay"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[global_group]
+
+player=""
 
 [input]
 

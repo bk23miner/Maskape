@@ -1,15 +1,6 @@
 extends CharacterBody2D
 
 
-
-
-
-
-	
-	
-	
-
-
 @export var SPEED := 200.0
 @export var DASH := 300.0
 var dashing = false
@@ -27,6 +18,12 @@ func _physics_process(delta):
 		else:
 			velocity = input_direction * SPEED
 		move_and_slide()
+		for i in get_slide_collision_count():
+			var collision = get_slide_collision(i)
+			#print(collision.get_collider())
+		for note in get_tree().get_nodes_in_group("player"):
+			#print(note.get_path)
+			pass
 
 
 
