@@ -2,7 +2,7 @@ extends Area2D
 
 var collected_by_player = false
 var collected_by_gate = false
-
+@export var speed = 5
 
 var player
 var gate
@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 			Game.add_piece()
 			queue_free()
 	elif collected_by_player:
-		global_position = global_position.lerp(player.get_node("target").global_position, delta)
+		global_position = global_position.lerp(player.get_node("target").global_position, delta * speed)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:

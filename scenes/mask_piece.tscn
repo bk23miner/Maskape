@@ -9,6 +9,7 @@ radius = 3.1622777
 
 [node name="MaskPiece" type="Area2D" unique_id=1027595768]
 script = ExtResource("1_6o1re")
+speed = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=402349382]
 scale = Vector2(0.203125, 0.203125)
