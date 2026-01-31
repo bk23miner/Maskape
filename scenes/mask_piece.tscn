@@ -7,6 +7,18 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_6o1re"]
 radius = 3.1622777
 
+[sub_resource type="Gradient" id="Gradient_f8ijw"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.0023310024, 0.71794873)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qlq7h"]
+gradient = SubResource("Gradient_f8ijw")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="MaskPiece" type="Area2D" unique_id=1027595768]
 script = ExtResource("1_6o1re")
 speed = 3
@@ -22,5 +34,10 @@ debug_color = Color(0.7492903, 0.46064168, 5.7756904e-07, 0.41960785)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=35688991]
 stream = ExtResource("3_f8ijw")
 bus = &"Effects"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=194642009]
+energy = 0.35
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_qlq7h")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

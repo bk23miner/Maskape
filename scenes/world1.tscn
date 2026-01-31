@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d2prbs7gyydhv" path="res://scenes/character.tscn" id="1_6kdnw"]
 [ext_resource type="Script" uid="uid://b0n6x2cgo85su" path="res://scripts/world_1.gd" id="1_scryw"]
+[ext_resource type="Texture2D" uid="uid://65hljlqvvl13" path="res://assets/stuff/maskpiece.png" id="2_o24d1"]
 [ext_resource type="TileSet" uid="uid://bgjl5vypaaas1" path="res://assets/tile_set.tres" id="2_x368c"]
 [ext_resource type="PackedScene" uid="uid://cnyms2okoibcu" path="res://scenes/mask_piece.tscn" id="3_scryw"]
 [ext_resource type="PackedScene" uid="uid://c0u1jsmpwviuf" path="res://scenes/hud.tscn" id="4_6u51x"]
@@ -10,6 +11,14 @@
 
 [node name="World" type="Node2D" unique_id=2123502667]
 script = ExtResource("1_scryw")
+
+[node name="Maskpiece" type="Sprite2D" parent="." unique_id=2025078660]
+position = Vector2(251.99997, -25)
+scale = Vector2(100, 100)
+texture = ExtResource("2_o24d1")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=690026965]
+color = Color(0, 0, 0, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2124291519]
 texture_filter = 1
@@ -20,7 +29,6 @@ tile_set = ExtResource("2_x368c")
 [node name="Hud" parent="." unique_id=1519614959 instance=ExtResource("4_6u51x")]
 
 [node name="MapTemplate" type="Sprite2D" parent="." unique_id=576823213]
-visible = false
 modulate = Color(1, 1, 1, 0.18039216)
 position = Vector2(350.87503, 350.75)
 scale = Vector2(1.040909, 1.0309917)
@@ -30,7 +38,7 @@ texture = ExtResource("6_gt337")
 y_sort_enabled = true
 
 [node name="Character" parent="Node2D" unique_id=3580456 instance=ExtResource("1_6kdnw")]
-position = Vector2(390, 739)
+position = Vector2(403, 476)
 
 [node name="MaskPiece" parent="Node2D" unique_id=1027595768 groups=["mask_piece"] instance=ExtResource("3_scryw")]
 position = Vector2(601, 229)
