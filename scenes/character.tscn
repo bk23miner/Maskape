@@ -2,8 +2,34 @@
 
 [ext_resource type="Script" uid="uid://o8ra0xf7gjee" path="res://scripts/character.gd" id="1_rkhd4"]
 [ext_resource type="SpriteFrames" uid="uid://cw45sfxvso2nn" path="res://assets/character/walking.tres" id="2_rkhd4"]
+[ext_resource type="Shader" uid="uid://bpet5xui58o8m" path="res://assets/shader/vignette.gdshader" id="3_lrhn5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkhd4"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkhd4"]
+radius = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_my7n2"]
+shader = ExtResource("3_lrhn5")
+shader_parameter/outerRadius = 1.0
+shader_parameter/MainAlpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lrhn5"]
+shader = ExtResource("3_lrhn5")
+shader_parameter/outerRadius = 0.68800003268
+shader_parameter/MainAlpha = 1.0
+
+[sub_resource type="GDScript" id="GDScript_dp8ca"]
+script/source = "extends ColorRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="Character" type="CharacterBody2D" unique_id=1676013416 groups=["player"]]
 script = ExtResource("1_rkhd4")
@@ -18,7 +44,8 @@ sprite_frames = ExtResource("2_rkhd4")
 animation = &"back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=946149693]
-shape = SubResource("RectangleShape2D_rkhd4")
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_rkhd4")
 
 [node name="dash_timer" type="Timer" parent="." unique_id=2094510126]
 wait_time = 0.25
@@ -28,9 +55,19 @@ one_shot = true
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1085660339]
+material = SubResource("ShaderMaterial_my7n2")
 position = Vector2(-1, 0)
-zoom = Vector2(4, 4)
+zoom = Vector2(5, 5)
 position_smoothing_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=2079529622]
+material = SubResource("ShaderMaterial_lrhn5")
+offset_left = -137.0
+offset_top = -137.0
+offset_right = -97.0
+offset_bottom = -97.0
+scale = Vector2(7, 7)
+script = SubResource("GDScript_dp8ca")
 
 [node name="target" type="Node2D" parent="." unique_id=1381367847]
 position = Vector2(12, -11)
