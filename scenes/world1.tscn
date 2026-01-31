@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://bgjl5vypaaas1" path="res://assets/tile_set.tres" id="2_x368c"]
 [ext_resource type="PackedScene" uid="uid://cnyms2okoibcu" path="res://scenes/mask_piece.tscn" id="3_scryw"]
 [ext_resource type="PackedScene" uid="uid://c0u1jsmpwviuf" path="res://scenes/hud.tscn" id="4_6u51x"]
+[ext_resource type="Texture2D" uid="uid://bhlvx5k8hbe8d" path="res://assets/map_template.png" id="6_gt337"]
 
 [node name="World" type="Node2D" unique_id=2123502667]
 script = ExtResource("1_scryw")
@@ -16,9 +17,21 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAE
 tile_set = ExtResource("2_x368c")
 
 [node name="Character" parent="." unique_id=3580456 instance=ExtResource("1_6kdnw")]
-position = Vector2(202, -152)
+position = Vector2(306, -138)
 
 [node name="MaskPiece" parent="." unique_id=1027595768 groups=["mask_piece"] instance=ExtResource("3_scryw")]
-position = Vector2(87, -101)
+position = Vector2(191, -87)
 
 [node name="Hud" parent="." unique_id=1519614959 instance=ExtResource("4_6u51x")]
+
+[node name="MaskPiece2" parent="." unique_id=1950714941 instance=ExtResource("3_scryw")]
+position = Vector2(271, -81)
+
+[node name="MaskPiece3" parent="." unique_id=1986901176 instance=ExtResource("3_scryw")]
+position = Vector2(391, -83)
+
+[node name="MapTemplate" type="Sprite2D" parent="." unique_id=576823213]
+modulate = Color(1, 1, 1, 0.18039216)
+position = Vector2(350.87503, 350.75)
+scale = Vector2(1.040909, 1.0309917)
+texture = ExtResource("6_gt337")
