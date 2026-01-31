@@ -28,10 +28,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 	if velocity.length_squared()>0:
-		$AudioStreamPlayer2D.play()
 		if not was_walking:
 			$AudioStreamPlayer2D.play()
-		
 		was_walking = true
 		var direction = velocity.angle_to(Vector2(1, 0))
 		#rechts	
