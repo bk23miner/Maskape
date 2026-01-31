@@ -1,7 +1,5 @@
 class_name Player extends CharacterBody2D
 
-
-
 @export var SPEED := 200.0
 @export var DASH := 300.0
 
@@ -9,6 +7,7 @@ var dashing = false
 var cooldown = true
 var last_direction := "front"
 var is_picking_up = false
+var was_walking = false
 
 @onready var body: AnimatedSprite2D = $Body
 
@@ -29,8 +28,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 	if velocity.length_squared()>0:
-		
 		$AudioStreamPlayer2D.play()
+		if not was_walking:
+			$AudioStreamPlayer2D.play()
+		
+		was_walking = true
 		var direction = velocity.angle_to(Vector2(1, 0))
 		#rechts	
 		if direction <= PI/4.0 and direction >=-PI/4.0:
@@ -50,6 +52,7 @@ func _physics_process(delta):
 			body.play("front")
 			#print("test")
 	else:
+		was_walking = false
 		play_idle()
 		$AudioStreamPlayer2D.stop()
 
