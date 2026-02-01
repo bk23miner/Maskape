@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://65hljlqvvl13" path="res://assets/stuff/maskpiece.png" id="2_6o1re"]
 [ext_resource type="AudioStream" uid="uid://da0oamk00mysa" path="res://assets/sounds/collect.wav" id="3_f8ijw"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f8ijw"]
+light_mode = 1
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_6o1re"]
 radius = 3.1622777
 
@@ -24,6 +27,7 @@ script = ExtResource("1_6o1re")
 speed = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=402349382]
+material = SubResource("CanvasItemMaterial_f8ijw")
 scale = Vector2(0.203125, 0.203125)
 texture = ExtResource("2_6o1re")
 
