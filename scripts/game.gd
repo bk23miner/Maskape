@@ -1,5 +1,7 @@
 extends Node2D
 
+
+var mode = 0
 var collected_pieces = 0
 var game_running = false
 var dialog_node: Node = null
@@ -26,10 +28,16 @@ func start_game():
 	#add_child(instance)
 	#dialog_node = instance
 	#await dialog_node.start_dialog()
-	var scene = load("res://scenes/world1.tscn")
-	var instance = scene.instantiate()
-	add_child(instance)
-	game_running = true
+	if mode == 1:
+		var scene = load("res://scenes/world1.tscn")
+		var instance = scene.instantiate()
+		add_child(instance)
+		game_running = true
+	elif mode == 0:
+		var scene = load("res://scenes/world0.tscn")
+		var instance = scene.instantiate()
+		add_child(instance)
+		game_running = true
 	#node_need = instance
 	#node_need.run_dialog
 

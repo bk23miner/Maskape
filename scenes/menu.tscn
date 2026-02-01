@@ -54,6 +54,12 @@ size_flags_horizontal = 4
 texture_normal = ExtResource("3_mhnvy")
 texture_hover = ExtResource("3_4ytvr")
 
+[node name="map" type="TextureButton" parent="Control/VBoxContainer" unique_id=903565666]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_4ytvr")
+texture_hover = ExtResource("3_mhnvy")
+
 [node name="quit_button" type="TextureButton" parent="Control/VBoxContainer" unique_id=1257986858]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -86,4 +92,5 @@ mouse_behavior_recursive = 1
 color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Control/VBoxContainer/start_button" to="." method="on_start_click"]
+[connection signal="pressed" from="Control/VBoxContainer/map" to="." method="on_map_click"]
 [connection signal="pressed" from="Control/VBoxContainer/quit_button" to="." method="on_quit_click"]
