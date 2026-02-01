@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bsqo6lar77cli" path="res://assets/Menu/exit-1.png" id="5_g3eks"]
 [ext_resource type="Texture2D" uid="uid://bkgpocl0yw10x" path="res://assets/Menu/exit-2.png" id="6_v86rl"]
 [ext_resource type="Texture2D" uid="uid://dbjf1y7hlpl7p" path="res://assets/Menu/logo.png" id="7_v86rl"]
+[ext_resource type="AudioStream" uid="uid://ctcsp2dk4k78v" path="res://assets/sounds/MASCAPE - Homescreen.wav" id="8_13sgg"]
+[ext_resource type="AudioStream" uid="uid://1j46quagui2j" path="res://assets/sounds/click.wav" id="8_i6lef"]
 
 [node name="Menu" type="CanvasLayer" unique_id=1905678182]
 script = ExtResource("1_mhnvy")
@@ -55,6 +57,13 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer2" unique_id=65124024]
 layout_mode = 2
 texture = ExtResource("7_v86rl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1930759177]
+stream = ExtResource("8_13sgg")
+autoplay = true
+
+[node name="clicksound-stream" type="AudioStreamPlayer2D" parent="." unique_id=207043546]
+stream = ExtResource("8_i6lef")
 
 [connection signal="pressed" from="VBoxContainer/start_button" to="." method="on_start_click"]
 [connection signal="pressed" from="VBoxContainer/quit_button" to="." method="on_quit_click"]

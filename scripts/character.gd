@@ -13,6 +13,8 @@ var was_walking = false
 
 func _physics_process(delta):
 	if is_picking_up:
+		was_walking = false
+		$AudioStreamPlayer2D.stop()
 		return
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	if Input.is_action_just_pressed("dash") and cooldown:

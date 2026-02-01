@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		global_position = global_position.lerp(player.get_node("target").global_position, delta * speed)
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player:
+	if body is Player and not collected_by_player:
 		var count = 0
 		for piece in get_tree().get_nodes_in_group("mask_piece"):
 			if piece.collected_by_player:
@@ -38,5 +38,3 @@ func _on_body_entered(body: Node2D) -> void:
 			collected_by_player = true
 			$AudioStreamPlayer2D.play()
 			player.pickup()
-
-			
