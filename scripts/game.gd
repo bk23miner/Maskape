@@ -35,6 +35,7 @@ func start_game():
 		add_child(instance)
 		game_running = true
 		dialog = get_tree().get_first_node_in_group("dialog")
+		
 
 	elif mode == 0:
 		var scene = load("res://scenes/world0.tscn")
@@ -42,6 +43,7 @@ func start_game():
 		add_child(instance)
 		game_running = true
 		dialog = get_tree().get_first_node_in_group("dialog")
+		
 	#node_need = instance
 	#node_need.run_dialog
 

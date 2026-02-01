@@ -13,19 +13,22 @@ func _process(delta: float) -> void:
 var timer = Timer
 
 func start_dialog():
+	get_tree().get_first_node_in_group("player").disable_input = true
+	
 	$Control/TextureRect/Label.text = "Where is this place...?"
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.5).timeout
 	$Control/TextureRect/Label.text = "Where did I leave my mask…?"
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.5).timeout
 	$Control/TextureRect/Label.text = "...only that I can’t leave without it..."
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.5).timeout
 	$Control/TextureRect/Label.text = "The corridors feel familiar...\n...like they’ve been waiting for me..."
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.5).timeout
 	$Control/TextureRect/Label.text = "If I want to escape, \nI’ll have to find the pieces..."
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.5).timeout
 	$Control/TextureRect/Label.text = "...and face the truth\n why I felt the need to hide them..."
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(3.5).timeout
 	$Control.hide()
+	get_tree().get_first_node_in_group("player").disable_input = false
 	
 func dialog_submit_mask(pieces):
 	if pieces==1:

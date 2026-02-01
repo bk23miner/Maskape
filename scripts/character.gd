@@ -8,10 +8,13 @@ var cooldown = true
 var last_direction := "front"
 var is_picking_up = false
 var was_walking = false
+var disable_input = false
 
 @onready var body: AnimatedSprite2D = $Body
 
 func _physics_process(delta):
+	if disable_input:
+		return
 	if is_picking_up:
 		was_walking = false
 		$AudioStreamPlayer2D.stop()
