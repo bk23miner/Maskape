@@ -8,11 +8,12 @@ var node_need: Node = null
 var dialog : Node = null
 var gate: Node = null
 var world: Node = null
+@onready var credits: TextureRect = $CanvasLayer/VBoxContainer/TextureRect
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-
+	credits.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -24,7 +25,6 @@ func restart_game():
 
 
 func stop_game():
-	world.queue_free()
 	collected_pieces = 0
 	var scene = load("res://scenes/menu.tscn")
 	var instance = scene.instantiate()

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ck0g2cop3skc3" path="res://scripts/gate_object.gd" id="1_xwxio"]
 [ext_resource type="Texture2D" uid="uid://m5gkqucmuqim" path="res://assets/stuff/masks/mask_stuffe0.png" id="2_hudsw"]
 [ext_resource type="Texture2D" uid="uid://dgqtqwwnsklhc" path="res://assets/stuff/gate_mask.png" id="2_xwxio"]
+[ext_resource type="AudioStream" uid="uid://12src1rxxh1i" path="res://assets/sounds/exit.wav" id="4_wi8tm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi8tm"]
 size = Vector2(110, 104)
@@ -44,6 +45,9 @@ shape = SubResource("RectangleShape2D_xwxio")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="return_to_menu" unique_id=1959963789]
 position = Vector2(1, -47)
 shape = SubResource("RectangleShape2D_xwxio")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=157395184]
+stream = ExtResource("4_wi8tm")
 
 [connection signal="body_entered" from="Area2D" to="." method="collision_with_player"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="collision_with_player"]

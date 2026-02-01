@@ -28,7 +28,6 @@ sources/0 = SubResource("TileSetAtlasSource_62ogi")
 script = ExtResource("1_scryw")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=690026965]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1630782696]
@@ -52,7 +51,6 @@ position = Vector2(-12, 0)
 y_sort_enabled = true
 
 [node name="Character" parent="Node2D" unique_id=3580456 instance=ExtResource("1_6kdnw")]
-z_index = 2
 position = Vector2(400, 750)
 
 [node name="MaskPiece" parent="Node2D" unique_id=1027595768 groups=["mask_piece"] instance=ExtResource("3_scryw")]
@@ -75,9 +73,47 @@ position = Vector2(353, 478)
 
 [node name="Lantern" parent="Node2D" unique_id=264734636 instance=ExtResource("10_1msdb")]
 position = Vector2(354, 528)
+lantern_texture = 4
 
 [node name="Lantern2" parent="Node2D" unique_id=154616514 instance=ExtResource("10_1msdb")]
 position = Vector2(476, 600)
+lantern_texture = 2
+
+[node name="Lantern3" parent="Node2D" unique_id=984749336 instance=ExtResource("10_1msdb")]
+position = Vector2(56, 563)
+lantern_texture = 4
+
+[node name="Lantern4" parent="Node2D" unique_id=2085334897 instance=ExtResource("10_1msdb")]
+position = Vector2(139, 519)
+lantern_texture = 5
+
+[node name="Lantern5" parent="Node2D" unique_id=1795425802 instance=ExtResource("10_1msdb")]
+position = Vector2(180, 442)
+lantern_texture = 1
+
+[node name="Lantern6" parent="Node2D" unique_id=459507854 instance=ExtResource("10_1msdb")]
+position = Vector2(138, 230)
+lantern_texture = 2
+
+[node name="Lantern7" parent="Node2D" unique_id=1401926288 instance=ExtResource("10_1msdb")]
+position = Vector2(554, 146)
+lantern_texture = 3
+
+[node name="Lantern8" parent="Node2D" unique_id=530007603 instance=ExtResource("10_1msdb")]
+position = Vector2(140, 130)
+lantern_texture = 4
+
+[node name="Lantern9" parent="Node2D" unique_id=1527589252 instance=ExtResource("10_1msdb")]
+position = Vector2(346, 323)
+lantern_texture = 5
+
+[node name="Lantern10" parent="Node2D" unique_id=782132990 instance=ExtResource("10_1msdb")]
+position = Vector2(472, 374)
+lantern_texture = 2
+
+[node name="Lantern11" parent="Node2D" unique_id=1781719037 instance=ExtResource("10_1msdb")]
+position = Vector2(677, 291)
+lantern_texture = 3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1861099593]
 stream = ExtResource("9_62ogi")

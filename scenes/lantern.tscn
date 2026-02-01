@@ -24,4 +24,5 @@ texture = ExtResource("2_jdg25")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=322856944]
 energy = 0.35
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_y6stn")
