@@ -21,8 +21,7 @@ func start_dialog():
 	await get_tree().create_timer(7.0).timeout
 	$VBoxContainer3/Label.text = "oooooo"
 	await get_tree().create_timer(7.0).timeout
-	self.queue_free()
+	#self.queue_free()
 
-
-
-	
+func dialog_submit_mask(index):
+	pass
