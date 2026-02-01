@@ -15,17 +15,12 @@ func _process(delta: float) -> void:
 
 
 func stop_game():
-<<<<<<< Updated upstream
 	collected_pieces = 0
-=======
-	
->>>>>>> Stashed changes
 	var scene = load("res://scenes/menu.tscn")
 	var instance = scene.instantiate()
 	add_child(instance)
 
 func start_game():
-	
 	#var scene = load("res://scenes/dialog.tscn")
 	#var instance = scene.instantiate()
 	#add_child(instance)
@@ -39,14 +34,10 @@ func start_game():
 	#node_need.run_dialog
 	
 	
-	
 func add_piece():
 	collected_pieces += 1
 
 
-
-	
-	
 #func start_game():
 	#await get_tree().process_frame
 	#var scene = load("res://scenes/game.tscn")

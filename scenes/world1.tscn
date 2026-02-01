@@ -74,21 +74,9 @@ position = Vector2(561, 102)
 [node name="MaskPiece6" parent="Node2D" unique_id=1647606058 groups=["mask_piece"] instance=ExtResource("3_scryw")]
 position = Vector2(353, 478)
 
-<<<<<<< Updated upstream
-[node name="Gate" parent="Node2D" unique_id=613757034 instance=ExtResource("7_o24d1")]
-z_index = 1
-position = Vector2(396, -23)
-scale = Vector2(0.7, 0.7)
-
-[node name="test_light" type="PointLight2D" parent="." unique_id=778215406]
-position = Vector2(359, 168)
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_rli88")
-=======
 [node name="Gate" parent="." unique_id=613757034 instance=ExtResource("7_o24d1")]
 position = Vector2(391, -23)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1861099593]
 stream = ExtResource("9_62ogi")
 autoplay = true
->>>>>>> Stashed changes
