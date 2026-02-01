@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://bri2ogbypkbhj"]
 
 [ext_resource type="PackedScene" uid="uid://d2prbs7gyydhv" path="res://scenes/character.tscn" id="1_6kdnw"]
-[ext_resource type="Script" uid="uid://b0n6x2cgo85su" path="res://scripts/world_1.gd" id="1_scryw"]
+[ext_resource type="Script" path="res://scripts/world_1.gd" id="1_scryw"]
 [ext_resource type="Texture2D" uid="uid://65hljlqvvl13" path="res://assets/stuff/maskpiece.png" id="2_o24d1"]
 [ext_resource type="TileSet" uid="uid://bgjl5vypaaas1" path="res://assets/tile_set.tres" id="2_x368c"]
 [ext_resource type="PackedScene" uid="uid://cnyms2okoibcu" path="res://scenes/mask_piece.tscn" id="3_scryw"]
 [ext_resource type="PackedScene" uid="uid://c0u1jsmpwviuf" path="res://scenes/hud.tscn" id="4_6u51x"]
 [ext_resource type="Texture2D" uid="uid://bhlvx5k8hbe8d" path="res://assets/map_template.png" id="6_gt337"]
-[ext_resource type="PackedScene" uid="uid://841i2ml85gs6" path="res://scenes/gate.tscn" id="7_o24d1"]
+[ext_resource type="PackedScene" path="res://scenes/gate.tscn" id="7_o24d1"]
+[ext_resource type="AudioStream" uid="uid://bx07m3fkhcv0h" path="res://assets/sounds/MASCAPE - main.wav" id="9_62ogi"]
 
 [sub_resource type="Gradient" id="Gradient_dp8ca"]
 offsets = PackedFloat32Array(0, 0.6363636, 0.7226107)
@@ -73,6 +74,7 @@ position = Vector2(561, 102)
 [node name="MaskPiece6" parent="Node2D" unique_id=1647606058 groups=["mask_piece"] instance=ExtResource("3_scryw")]
 position = Vector2(353, 478)
 
+<<<<<<< Updated upstream
 [node name="Gate" parent="Node2D" unique_id=613757034 instance=ExtResource("7_o24d1")]
 z_index = 1
 position = Vector2(396, -23)
@@ -82,3 +84,11 @@ scale = Vector2(0.7, 0.7)
 position = Vector2(359, 168)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_rli88")
+=======
+[node name="Gate" parent="." unique_id=613757034 instance=ExtResource("7_o24d1")]
+position = Vector2(391, -23)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1861099593]
+stream = ExtResource("9_62ogi")
+autoplay = true
+>>>>>>> Stashed changes
