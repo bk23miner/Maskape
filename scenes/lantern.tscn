@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://68q3o6jlgo64"]
+
+[ext_resource type="Script" uid="uid://bferyc8afnsr" path="res://scripts/lantern.gd" id="1_uxgnm"]
+[ext_resource type="Texture2D" uid="uid://ci63w2hhdviyr" path="res://assets/stuff/lanterns/blue-lantern.png" id="2_jdg25"]
+
+[sub_resource type="Gradient" id="Gradient_dp8ca"]
+offsets = PackedFloat32Array(0, 0.6363636, 0.7226107)
+colors = PackedColorArray(1, 1, 1, 1, 0.26451617, 0.26451617, 0.26451617, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y6stn"]
+gradient = SubResource("Gradient_dp8ca")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Lantern" type="Node2D" unique_id=264734636]
+script = ExtResource("1_uxgnm")
+texture = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1784062403]
+texture_filter = 1
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_jdg25")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=322856944]
+energy = 0.35
+texture = SubResource("GradientTexture2D_y6stn")

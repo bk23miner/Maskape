@@ -9,18 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://bhlvx5k8hbe8d" path="res://assets/map_template.png" id="6_gt337"]
 [ext_resource type="PackedScene" uid="uid://841i2ml85gs6" path="res://scenes/gate.tscn" id="7_o24d1"]
 [ext_resource type="AudioStream" uid="uid://bx07m3fkhcv0h" path="res://assets/sounds/MASCAPE - main.wav" id="9_62ogi"]
+[ext_resource type="PackedScene" uid="uid://68q3o6jlgo64" path="res://scenes/lantern.tscn" id="10_1msdb"]
 
 [node name="World" type="Node2D" unique_id=2123502667]
 script = ExtResource("1_scryw")
 
 [node name="Maskpiece" type="Sprite2D" parent="." unique_id=2025078660]
-visible = false
 position = Vector2(251.99997, -25)
 scale = Vector2(100, 100)
 texture = ExtResource("2_o24d1")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=690026965]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2124291519]
@@ -72,3 +71,11 @@ position = Vector2(353, 478)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1861099593]
 stream = ExtResource("9_62ogi")
 autoplay = true
+
+[node name="Lantern" parent="." unique_id=264734636 instance=ExtResource("10_1msdb")]
+position = Vector2(354, 528)
+texture = 2
+
+[node name="Lantern2" parent="." unique_id=154616514 instance=ExtResource("10_1msdb")]
+position = Vector2(476, 600)
+texture = 5
