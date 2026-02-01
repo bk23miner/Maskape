@@ -16,9 +16,8 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="Lantern" type="Node2D" unique_id=264734636]
 script = ExtResource("1_uxgnm")
-texture = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1784062403]
+[node name="lantern_img" type="Sprite2D" parent="." unique_id=1784062403]
 texture_filter = 1
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_jdg25")
