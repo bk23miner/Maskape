@@ -24,7 +24,7 @@ texture = ExtResource("3_cqo20")
 [sub_resource type="TileSet" id="TileSet_wnwuj"]
 sources/0 = SubResource("TileSetAtlasSource_62ogi")
 
-[node name="World" type="Node2D" unique_id=2123502667]
+[node name="World" type="Node2D" unique_id=2123502667 groups=["world"]]
 script = ExtResource("1_scryw")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=690026965]

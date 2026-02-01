@@ -10,4 +10,3 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("main_menu"):
 		Game.stop_game()
-		self.queue_free()

@@ -77,8 +77,10 @@ mouse_filter = 2
 mouse_behavior_recursive = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer2" unique_id=65124024]
+texture_filter = 1
 layout_mode = 2
 texture = ExtResource("7_v86rl")
+stretch_mode = 3
 
 [node name="SceneTransitionRect" type="ColorRect" parent="." unique_id=644458645]
 modulate = Color(1, 1, 1, 0)

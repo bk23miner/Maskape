@@ -39,5 +39,12 @@ texture = ExtResource("2_hudsw")
 position = Vector2(0, 43.5)
 shape = SubResource("RectangleShape2D_xwxio")
 
+[node name="return_to_menu" type="Area2D" parent="." unique_id=801215552]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="return_to_menu" unique_id=1959963789]
+position = Vector2(1, -47)
+shape = SubResource("RectangleShape2D_xwxio")
+
 [connection signal="body_entered" from="Area2D" to="." method="collision_with_player"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="collision_with_player"]
+[connection signal="body_entered" from="return_to_menu" to="." method="end"]
