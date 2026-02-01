@@ -63,7 +63,7 @@ func play_idle():
 		"left":
 			body.play("idle_l")
 		"back":
-			body.play("idle_f")
+			body.play("idle_b")
 		"front":
 			body.play("idle_f")
 
