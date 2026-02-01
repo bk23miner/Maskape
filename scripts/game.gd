@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var mode = 0
 var collected_pieces = 0
 var game_running = false
@@ -48,7 +47,8 @@ func start_game():
 
 func add_piece():
 	collected_pieces += 1
-	dialog.dialog_submit_mask()
+	dialog.dialog_submit_mask(collected_pieces)
+	
 
 
 #func start_game():

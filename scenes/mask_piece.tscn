@@ -37,7 +37,7 @@ debug_color = Color(0.7492903, 0.46064168, 5.7756904e-07, 0.41960785)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=35688991]
 stream = ExtResource("3_f8ijw")
-bus = &"Effects"
+volume_db = -0.8
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=194642009]
 energy = 0.35
