@@ -33,6 +33,7 @@ window/size/viewport_height=720
 player=""
 mask_piece=""
 start_screen=""
+gate=""
 
 [input]
 

@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 		position = position.lerp(gate.position, delta)
 		if (position-gate.position).length() < 10:
 			Game.add_piece()
+			gate.change_mask()
 			queue_free()
 	elif collected_by_player:
 		global_position = global_position.lerp(player.get_node("target").global_position, delta * speed)

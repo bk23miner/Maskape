@@ -1,25 +1,43 @@
 [gd_scene format=3 uid="uid://841i2ml85gs6"]
 
 [ext_resource type="Script" uid="uid://ck0g2cop3skc3" path="res://scripts/gate_object.gd" id="1_xwxio"]
-[ext_resource type="Texture2D" uid="uid://ccqnu0v7j3uog" path="res://assets/test_textures/Spritesheet.png" id="2_hudsw"]
+[ext_resource type="Texture2D" uid="uid://m5gkqucmuqim" path="res://assets/stuff/masks/mask_stuffe0.png" id="2_hudsw"]
+[ext_resource type="Texture2D" uid="uid://dgqtqwwnsklhc" path="res://assets/stuff/gate_mask.png" id="2_xwxio"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wi8tm"]
-size = Vector2(125, 52)
+size = Vector2(110, 104)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nbnmf"]
-atlas = ExtResource("2_hudsw")
-region = Rect2(63.655197, 21.353905, 127.72359, 53.343384)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xwxio"]
+polygon = PackedVector2Array(46.666668, 46.666668, 44, 42.666668, 44, -17.333334, 50.666668, -22.666668, 50.666668, -26.666668, 56, -26.666668, 56, -33.333336, 37.333336, -52, -37.333336, -52, -56, -33.333336, -56, -26.666668, -50.666668, -26.666668, -48, -20, -42.666668, -17.333334, -42.666668, 42.666668, -46.666668, 46.666668, -100, -40, -44, -89.333336, 48, -105.333336, 94.66667, -17.333334)
 
-[node name="Gate" type="Node2D" unique_id=613757034]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwxio"]
+size = Vector2(84, 31)
 
-[node name="gate_object" type="Area2D" parent="." unique_id=1901199865 groups=["gate"]]
+[node name="Gate" type="Node2D" unique_id=613757034 groups=["gate"]]
 script = ExtResource("1_xwxio")
 
+[node name="gate_object" type="StaticBody2D" parent="." unique_id=297899808]
+texture_filter = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gate_object" unique_id=663245705]
-position = Vector2(0.5, 0)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_wi8tm")
 
 [node name="gate_texture" type="Sprite2D" parent="gate_object" unique_id=577457913]
-texture = SubResource("AtlasTexture_nbnmf")
+texture = ExtResource("2_xwxio")
 
-[connection signal="body_entered" from="gate_object" to="gate_object" method="collision_with_player"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="gate_object" unique_id=1167108959]
+occluder = SubResource("OccluderPolygon2D_xwxio")
+
+[node name="mask_texture" type="Sprite2D" parent="gate_object" unique_id=507574725]
+position = Vector2(0, 14)
+texture = ExtResource("2_hudsw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1993016901]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1248354245]
+position = Vector2(0, 43.5)
+shape = SubResource("RectangleShape2D_xwxio")
+
+[connection signal="body_entered" from="Area2D" to="." method="collision_with_player"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="collision_with_player"]
