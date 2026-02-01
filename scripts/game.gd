@@ -25,6 +25,7 @@ func restart_game():
 
 
 func stop_game():
+	world.queue_free()
 	collected_pieces = 0
 	var scene = load("res://scenes/menu.tscn")
 	var instance = scene.instantiate()
