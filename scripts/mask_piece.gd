@@ -20,7 +20,6 @@ func _process(delta: float) -> void:
 	if player.is_picking_up:
 		return
 	if collected_by_gate:
-		
 		position = position.lerp(gate.position, delta)
 		if (position-gate.position).length() < 10:
 			Game.add_piece()

@@ -32,8 +32,7 @@ func start_game():
 	game_running = true
 	#node_need = instance
 	#node_need.run_dialog
-	
-	
+
 func add_piece():
 	collected_pieces += 1
 

@@ -13,57 +13,77 @@
 [node name="Menu" type="CanvasLayer" unique_id=1905678182]
 script = ExtResource("1_mhnvy")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=2086567788]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -37.0
-offset_bottom = 37.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_mhnvy")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1744360850]
-anchors_preset = -1
-anchor_top = 0.377
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 26.559998
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="start_button" type="TextureButton" parent="VBoxContainer" unique_id=228398319]
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("3_mhnvy")
-texture_hover = ExtResource("3_4ytvr")
-
-[node name="quit_button" type="TextureButton" parent="VBoxContainer" unique_id=1257986858]
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("5_g3eks")
-texture_hover = ExtResource("6_v86rl")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=777882886]
-anchors_preset = -1
-anchor_left = 0.031000001
-anchor_right = 1.0
-anchor_bottom = 0.381
-offset_left = -39.68
-offset_bottom = 16.679993
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer2" unique_id=65124024]
-layout_mode = 2
-texture = ExtResource("7_v86rl")
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1930759177]
 stream = ExtResource("8_13sgg")
 autoplay = true
 
 [node name="clicksound-stream" type="AudioStreamPlayer2D" parent="." unique_id=207043546]
 stream = ExtResource("8_i6lef")
+bus = &"Effects"
 
-[connection signal="pressed" from="VBoxContainer/start_button" to="." method="on_start_click"]
-[connection signal="pressed" from="VBoxContainer/quit_button" to="." method="on_quit_click"]
+[node name="Control" type="Control" parent="." unique_id=2104698817]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=2086567788]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("2_mhnvy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1744360850]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 331.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start_button" type="TextureButton" parent="Control/VBoxContainer" unique_id=228398319]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_mhnvy")
+texture_hover = ExtResource("3_4ytvr")
+
+[node name="quit_button" type="TextureButton" parent="Control/VBoxContainer" unique_id=1257986858]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_g3eks")
+texture_hover = ExtResource("6_v86rl")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control" unique_id=777882886]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer2" unique_id=65124024]
+layout_mode = 2
+texture = ExtResource("7_v86rl")
+
+[node name="SceneTransitionRect" type="ColorRect" parent="." unique_id=644458645]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="Control/VBoxContainer/start_button" to="." method="on_start_click"]
+[connection signal="pressed" from="Control/VBoxContainer/quit_button" to="." method="on_quit_click"]
