@@ -9,8 +9,11 @@ script = ExtResource("1_lnu2h")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1774076662]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1468884847]
-offset_right = 1280.0
-offset_bottom = 720.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/VBoxContainer" unique_id=1282287924]
 layout_mode = 2
